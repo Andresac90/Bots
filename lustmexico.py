@@ -2,7 +2,7 @@ import time
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
+#si
 #variables input
 print("Ingresa la URL del articulo para usar el bot")
 URL = input()
