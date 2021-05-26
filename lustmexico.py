@@ -46,7 +46,7 @@ option.add_experimental_option('useAutomationExtension', False)
 option.add_argument('--disable-blink-features=AutomationControlled')
 
 #Direccion en memoria de Chromedriver
-browser = webdriver.Chrome(r'C:\Users\aceve\OneDrive\Documents\ProjectDavid\chromedriver', options=option)
+browser = webdriver.Chrome(r'C:\Users\bolan\OneDrive\Documentos\GitHub\Bots-Python\chromedriver.exe', options=option)
 
 #Entrar al URL
 if URL:
