@@ -79,10 +79,9 @@ browser = webdriver.Chrome(r'C:\Users\aceve\OneDrive\Documents\ProjectDavid\chro
 
 #///////////////////Hasta aqui tienes que llenar datos///////////////////
 
-#Login
-# print("Inicia Sesion en la pagina")
-# print("Presiona enter cuando estes logeado")
-# input()
+#Login Invictus
+LoginI = "acevedopico@hotmail.com"
+ContraI = "Agapa90190"
 
 #/////////////////////////CODIGOUSOEMERGENCIAEND/////////////////////////
 
@@ -97,9 +96,9 @@ buyButton = False
 while not buyButton:
     try:
         #Si esto se ejecuta el boton esta abierto
-        AgregarCarro = addButton = browser.find_element_by_class_name("buy-button--buy-now")
+        AgregarCarro = addButton = browser.find_element_by_id("addToCartButtonDesktop2")
         if AgregarCarro:
-            browser.find_element_by_class_name("buy-button--buy-now").click()
+            browser.find_element_by_id("addToCartButtonDesktop2").click()
             buyButton = True
             #Breakexcept = True      
 
@@ -113,7 +112,12 @@ while not buyButton:
 #browser.find_element_by_class_name("cart__checkout").click()
 
 #Comando Javascript
+browser.get("https://www.innvictus.com/checkout/multi/delivery-address/add")
+browser.find_element_by_id('j_username').send_keys(LoginI)
+browser.find_element_by_id('j_password').send_keys(ContraI)
+browser.find_elements_by_class_name('btn btn-default').click()
 browser.get("https://www.innvictus.com/checkout/multi/innvictus-payment-method/add")
+browser.find_element_by_id("payment_method_paypal").click()
 
 # if (Metodo == "P"):
 #     browser.find_element_by_id('checkout_payment_gateway_9942630443').click()
@@ -127,7 +131,7 @@ browser.get("https://www.innvictus.com/checkout/multi/innvictus-payment-method/a
 #     sys.exit()
 
 #Ir a Paypal
-browser.find_element_by_id('continue_button').click()
+browser.find_element_by_id('continueButton').click()
 
 #Pagar Paypal
 time.sleep(10)
