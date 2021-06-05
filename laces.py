@@ -132,7 +132,7 @@ browser.find_element_by_id('continue_button').click()
 #Pagar Paypal
 time.sleep(10)
 print("Pagando")
-botonp = addButton = browser.find_element_by_id("payment-submit-btn")
+botonp = addButton = browser.find_element_by_xpath("//div[@id='root']//button[@id='payment-submit-btn']")
 
 #Pagar con dos opciones
 

@@ -3,6 +3,9 @@ import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 #Ingresar URL
 print("Ingresa la URL del articulo para usar el bot")
@@ -97,9 +100,15 @@ buyButton = False
 while not buyButton:
     try:
         #Si esto se ejecuta el boton esta abierto
-        AgregarCarro = addButton = browser.find_element_by_class_name("btn--full")
+        AgregarCarro = addButton = browser.find_element_by_class_name("add-to-cart-btn")
         if AgregarCarro:
-            browser.find_element_by_class_name("btn--full").click()
+            #Elegir talla
+            tallas = ["skuAndSize__26231181", "skuAndSize__26231172", "skuAndSize__26231175", "skuAndSize__26231170", "skuAndSize__26231174", "skuAndSize__26231168", "skuAndSize__26231184", "skuAndSize__26231180", "skuAndSize__26231183", "skuAndSize__26231179", "skuAndSize__26231182", "skuAndSize__26231178", "skuAndSize__26231173", "skuAndSize__26231171"]
+            for x in tallas:
+                if browser.find_element_by_id(x).isDisplayed():
+                    browser.find_element_by_id(x).click()
+                    break
+            browser.find_element_by_class_name("add-to-cart-btn").click()
             buyButton = True
             #Breakexcept = True      
 
@@ -109,22 +118,10 @@ while not buyButton:
         browser.refresh()
         print("Todavia no esta disponible el boton de agregar a carrito")
 
-#Checkout
-#browser.find_element_by_class_name("cart__checkout").click()
 
-#Comando Javascript
-browser.get("https://www.lustmexico.com/26365824/checkouts/1f9980146c0114fca9f170ca93d95bd3?previous_step=shipping_method&step=payment_method")
 
-# if (Metodo == "P"):
-#     browser.find_element_by_id('checkout_payment_gateway_9942630443').click()
-# elif (Metodo == "T"):
-#     browser.find_element_by_id('checkout_payment_gateway_18405425195').click()
-# else:
-#     print("Metodo de pago seleccionado incorrecto")
-#     time.sleep(1)
-#     print("Saliendo del programa")
-#     browser.quit()
-#     sys.exit()
+#Comando URL de pago
+browser.get("https://www.paypal.com/checkoutnow?token=86C99797L1830553E")
 
 #Ir a Paypal
 browser.find_element_by_id('continue_button').click()
@@ -132,7 +129,9 @@ browser.find_element_by_id('continue_button').click()
 #Pagar Paypal
 time.sleep(10)
 print("Pagando")
-botonp = addButton = browser.find_element_by_id("payment-submit-btn")
+agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper')]//button[@id='payment-submit-btn' and @data-disabled='true']"))); browser.execute_script("arguments[0].click();", agree_ctn_button)
+#agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper_2VloF')]//button[@id='payment-submit-btn' and @data-disabled='false']")))
+#agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper_2VloF')]//button[@id='payment-submit-btn' and @data-disabled='true']")))
 
 #Pagar con dos opciones
 

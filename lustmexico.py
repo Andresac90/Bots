@@ -3,6 +3,9 @@ import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 #Ingresar URL
 print("Ingresa la URL del articulo para usar el bot")
@@ -112,7 +115,7 @@ while not buyButton:
 #Checkout
 #browser.find_element_by_class_name("cart__checkout").click()
 
-#Comando Javascript
+#Comando URL de pago
 browser.get("https://www.lustmexico.com/26365824/checkouts/1f9980146c0114fca9f170ca93d95bd3?previous_step=shipping_method&step=payment_method")
 
 # if (Metodo == "P"):
@@ -132,7 +135,9 @@ browser.find_element_by_id('continue_button').click()
 #Pagar Paypal
 time.sleep(10)
 print("Pagando")
-botonp = addButton = browser.find_element_by_id("payment-submit-btn")
+agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper')]//button[@id='payment-submit-btn' and @data-disabled='true']"))); browser.execute_script("arguments[0].click();", agree_ctn_button)
+#agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper_2VloF')]//button[@id='payment-submit-btn' and @data-disabled='false']")))
+#agree_ctn_button = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'modal-foreground-container')]//div[contains(@class, 'CheckoutButton_buttonWrapper_2VloF')]//button[@id='payment-submit-btn' and @data-disabled='true']")))
 
 #Pagar con dos opciones
 

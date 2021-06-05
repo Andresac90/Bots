@@ -97,9 +97,9 @@ buyButton = False
 while not buyButton:
     try:
         #Si esto se ejecuta el boton esta abierto
-        AgregarCarro = addButton = browser.find_element_by_class_name("btn--full")
+        AgregarCarro = addButton = browser.find_element_by_class_name("buy-button--buy-now")
         if AgregarCarro:
-            browser.find_element_by_class_name("btn--full").click()
+            browser.find_element_by_class_name("buy-button--buy-now").click()
             buyButton = True
             #Breakexcept = True      
 
@@ -113,7 +113,7 @@ while not buyButton:
 #browser.find_element_by_class_name("cart__checkout").click()
 
 #Comando Javascript
-browser.get("https://www.lustmexico.com/26365824/checkouts/1f9980146c0114fca9f170ca93d95bd3?previous_step=shipping_method&step=payment_method")
+browser.get("https://www.innvictus.com/checkout/multi/innvictus-payment-method/add")
 
 # if (Metodo == "P"):
 #     browser.find_element_by_id('checkout_payment_gateway_9942630443').click()

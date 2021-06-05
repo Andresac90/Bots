@@ -97,9 +97,9 @@ buyButton = False
 while not buyButton:
     try:
         #Si esto se ejecuta el boton esta abierto
-        AgregarCarro = addButton = browser.find_element_by_class_name("btn--full")
+        AgregarCarro = addButton = browser.find_element_by_class_name("btn-primary")
         if AgregarCarro:
-            browser.find_element_by_class_name("btn--full").click()
+            browser.find_element_by_class_name("btn-primary").click()
             buyButton = True
             #Breakexcept = True      
 
