@@ -51,7 +51,7 @@ browser = webdriver.Chrome(r'C:\Users\aceve\OneDrive\Documents\ProjectDavid\chro
 #     Paypalcorreo = "acevedopico@hotmail.com"
 
 #     #Contraseña en Paypal
-#     Paypalcontra = "Agapa90190"
+#     Paypalcontra = ""
 
 # #Datos en Tarjeta
 # elif Metodo == "T":
