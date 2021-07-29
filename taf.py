@@ -55,12 +55,14 @@ while not buyButton:
 
 browser.get("https://www.taf.com.mx/checkout/#/payment")
 
-time.sleep(2)
+time.sleep(1)
 pyautogui.click(1432, 527)
 
 #Pagar Paypal
 time.sleep(7)
-pyautogui.click(1000, 820)
+pyautogui.click(1000, 620)
+
 print("Pagando")
-botonp = addButton = browser.find_element_by_id("payment-submit-btn")
+time.sleep(4)
+pyautogui.click(1000, 805)
 
