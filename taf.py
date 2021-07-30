@@ -20,6 +20,7 @@ option.add_argument(r'--profile-directory=Default') #Andres
 #option.add_argument(r'--profile-directory=Default') #David
 
 #Quitar flag en Chrome
+option.add_experimental_option("detach", True)
 option.add_experimental_option("excludeSwitches", ["enable-automation"])
 option.add_experimental_option('useAutomationExtension', False)
 option.add_argument('--disable-blink-features=AutomationControlled')
@@ -63,6 +64,6 @@ time.sleep(7)
 pyautogui.click(1000, 620)
 
 print("Pagando")
-time.sleep(4)
-pyautogui.click(1000, 805)
+time.sleep(4.5)
+pyautogui.click(1000, 810)
 
