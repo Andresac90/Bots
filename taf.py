@@ -59,10 +59,11 @@ browser.get("https://www.taf.com.mx/checkout/#/payment")
 time.sleep(1)
 pyautogui.click(1432, 527)
 
-#Pagar Paypal
+#Iniciar Sesion Paypal
 time.sleep(7)
 pyautogui.click(1000, 620)
 
+#Pagar
 print("Pagando")
 time.sleep(4.5)
 pyautogui.click(1000, 810)
