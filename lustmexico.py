@@ -18,10 +18,10 @@ URL = input()
 option = Options()
 
 #Profile en Chrome
-option.add_argument(r"--user-data-dir=C:\Users\aceve\AppData\Local\Google\Chrome\User Data") #Andres
-option.add_argument(r'--profile-directory=Default') #Andres
-#option.add_argument(r"--user-data-dir=C:\Users\aceve\AppData\Local\Google\Chrome\User Data") #David
-#option.add_argument(r'--profile-directory=Default') #David
+#option.add_argument(r"--user-data-dir=C:\Users\aceve\AppData\Local\Google\Chrome\User Data") #Andres
+#option.add_argument(r'--profile-directory=Default') #Andres
+option.add_argument(r"--user-data-dir=C:\Users\bolan\AppData\Local\Google\Chrome\User Data") #David
+option.add_argument(r'--profile-directory=Profile 4') #David
 
 #Quitar flag en Chrome
 option.add_experimental_option("detach", True)
@@ -30,8 +30,8 @@ option.add_experimental_option('useAutomationExtension', False)
 option.add_argument('--disable-blink-features=AutomationControlled')
 
 #Direccion en memoria de Chromedriver
-browser = webdriver.Chrome(r'C:\Users\aceve\OneDrive\Documents\ProjectDavid\chromedriver', options=option) #Andres
-#browser = webdriver.Chrome(r'C:\Users\bolan\OneDrive\Documentos\chromedriver.exe', options=option) #David
+#browser = webdriver.Chrome(r'C:\Users\aceve\OneDrive\Documents\ProjectDavid\chromedriver', options=option) #Andres
+browser = webdriver.Chrome(r'C:\Users\bolan\OneDrive\Documentos\chromedriver.exe', options=option) #David
 
 #Ir al URL Seleccionado
 browser.get("{}".format(URL))
@@ -58,7 +58,7 @@ while not buyButton:
 
 #Checkout
 browser.find_element_by_name("checkout").click()
-
+time.sleep(1.5)
 #Ir a Paypal
 browser.find_element_by_id('continue_button').click()
 
@@ -68,5 +68,5 @@ pyautogui.click(1000, 620)
 
 #Pagar
 print("Pagando")
-time.sleep(4.5)
+time.sleep(7)
 pyautogui.click(1000, 910)
