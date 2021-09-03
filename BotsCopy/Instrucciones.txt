@@ -1,7 +1,0 @@
-1. Estar seguro estas logeado
-2. Poner tu direccion en checkout/Paypal
-3. Carrito vacio
-4. Cerrar chrome
-4. Cuando uses el bot tener abierto chrome
-5. No mover el mouse
-6. No cierres el bot
