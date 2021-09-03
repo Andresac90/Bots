@@ -16,30 +16,30 @@ class EqSolverTests: XCTestCase{
         
         func test1() throws {
             // Given
-            let a = 0.0
-            let b = 0.0
-            let c = 0.0
+            let a = 2.0
+            let b = 6.0
+            let c = 9.0
             
             // When
             let resultado = Version3_0.quadraticSolver(a: a, b: b, c: c)
             
             // Then
-            let expectedValue: String = "0"
+            let expectedValue: String = "Raiz 1 = 0.0i Raiz 2 = -3.0i"
             
             XCTAssertEqual(resultado, expectedValue)
         }
     
         func test2() throws {
             // Given
-            let a = 1.0
-            let b = 4.0
-            let c = 4.0
+            let a = 4.0
+            let b = 2.0
+            let c = 2.0
             
             // When
             let resultado = Version3_0.quadraticSolver(a: a, b: b, c: c)
             
             // Then
-            let expectedValue: String = "Solo existe un resultado: -2.0"
+            let expectedValue: String = "Raiz 1 = 0.411i Raiz 2 = -0.911i"
             
             XCTAssertEqual(resultado, expectedValue)
         }

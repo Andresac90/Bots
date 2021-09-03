@@ -23,7 +23,7 @@ public class Solver {
             let sq = sqrt(b2_4ac)
             let root1 = (-b + sq) / (2 * a)
             let root2 = (-b - sq) / (2 * a)
-            return "Raiz 1 = \(round(1000 * root1)/1000)i \n Raiz 2 = \(round(1000 * root2)/1000)i"
+            return "Raiz 1 = \(round(1000 * root1)/1000)i Raiz 2 = \(round(1000 * root2)/1000)i"
         }
         let sq = sqrt(b2_4ac)
         let root1 = (-b + sq) / (2 * a)

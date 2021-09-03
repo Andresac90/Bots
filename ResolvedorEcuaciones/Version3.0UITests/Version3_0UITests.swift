@@ -49,16 +49,16 @@ class Version3_0UITests: XCTestCase {
           let raiz1TextField = app.textFields["Resultado"]
         
           aTextField.tap()
-          aTextField.typeText("1.0")
+          aTextField.typeText("6.0")
           bTextField.tap()
-          bTextField.typeText("-5.0")
+          bTextField.typeText("-3.0")
           cTextField.tap()
-          cTextField.typeText("6.0")
+          cTextField.typeText("3.0")
           app.staticTexts["Resolver"].tap()
 
           print("Raiz1 " + (raiz1TextField.value as! String))
 
-        XCTAssertEqual(raiz1TextField.value as! String, "Raiz 1 = 3.0 Raiz 2 = 2.0")
+        XCTAssertEqual(raiz1TextField.value as! String, "Raiz 1 = 0.911i Raiz 2 = -0.411i")
           
       }
     
@@ -72,16 +72,16 @@ class Version3_0UITests: XCTestCase {
           let raiz1TextField = app.textFields["Resultado"]
         
           aTextField.tap()
-          aTextField.typeText("1.0")
+          aTextField.typeText("8.0")
           bTextField.tap()
-          bTextField.typeText("8.0")
+          bTextField.typeText("10.0")
           cTextField.tap()
-          cTextField.typeText("16.0")
+          cTextField.typeText("20.0")
           app.staticTexts["Resolver"].tap()
 
           print("Raiz1 " + (raiz1TextField.value as! String))
 
-        XCTAssertEqual(raiz1TextField.value as! String, "Solo existe un resultado: -4.0")
+        XCTAssertEqual(raiz1TextField.value as! String, "Raiz 1 = 0.827i Raiz 2 = -2.077i")
           
       }
 }
